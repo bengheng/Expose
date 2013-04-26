@@ -1,0 +1,8 @@
+repair table `frequency`;
+repair table `ngram`;
+repair table `function`;
+repair table `file`;
+repair table `dist`;
+repair table `dist_cosim`;
+repair table `result_approx`;
+

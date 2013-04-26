@@ -1,0 +1,33 @@
+#!/usr/bin/jython
+
+import subprocess
+import os
+import sys
+
+home = os.environ.get("HOME")+"/"
+lmhome = home+"libmatcher/"
+
+os.environ["TVHEADLESS"] = "1"
+for arg in sys.argv[1::]:
+	for dirpath, dirnames, filenames in os.walk(arg):
+		for f in filenames:
+			fullpathname = os.path.join(dirpath, f)
+			if os.path.isfile(fullpathname) and os.path.exists(fullpathname):
+				proc_type = subprocess.Popen('file -b \"'+fullpathname+'\"', shell=True, stdout=subprocess.PIPE, close_fds=True)
+				type = proc_type.stdout
+				typestr = type.read().rstrip('\n')
+				arch = 0
+				if (typestr.find('ELF 32-bit LSB') != -1):
+					arch = 32
+				elif (typestr.find('ELF 64-bit LSB') != -1):
+					arch = 64
+				if arch == 32:	
+					print fullpathname
+					proc_ida = subprocess.Popen([home+"idaadv/idal", "-A", "-Cg", "-o"+lmhome+"bin/ida/idb/tmp.idb","-c","-S"+lmhome+"bin/ida/idc/libmatcher.idc", "-B", fullpathname], close_fds=True)
+					result = proc_ida.wait()
+					del proc_ida
+					del result
+				del typestr
+				type.close()
+				del type
+				del proc_type

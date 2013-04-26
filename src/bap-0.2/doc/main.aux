@@ -1,0 +1,174 @@
+\relax 
+\ifx\hyper@anchor\@undefined
+\global \let \oldcontentsline\contentsline
+\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global \let \oldnewlabel\newlabel
+\gdef \newlabel#1#2{\newlabelxx{#1}#2}
+\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\let \contentsline\oldcontentsline
+\let \newlabel\oldnewlabel}
+\else
+\global \let \hyper@last\relax 
+\fi
+
+\citation{intel:x86}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}The Need for Binary Analysis}{1}{section.1.1}}
+\newlabel{vine:introduction}{{1.1}{1}{The Need for Binary Analysis\relax }{section.1.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Binary Code Analysis is Different than Source Code Analysis.}{1}{section*.4}}
+\citation{intel:x86}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces A three instruction x86 program, and its corresponding control flow graph. Note the logic for deciding when the jump on overflow instruction (statement 3) is taken, when is often omitted by other binary analysis platforms. }}{2}{figure.1.1}}
+\newlabel{vine:shl-add}{{1.1}{2}{Binary Code is Complex}{figure.1.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Binary Code is Complex.}{2}{figure.1.1}}
+\citation{intel:x86}
+\citation{intel:x86}
+\citation{intel:x86}
+\citation{dyninst}
+\citation{phoenix}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces The semantics of the {\tt  rep} instruction according to Intel\nobreakspace  {}\cite  {intel:x86}. Modern architectures often have hundreds of instructions that have complex semantics like {\tt  rep}.}}{3}{figure.1.2}}
+\newlabel{vine:rep}{{1.2}{3}{Binary Code is Complex}{figure.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Desired Properties}{3}{section.1.2}}
+\citation{intel:x86}
+\citation{arm:armv4}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces The BAP\xspace  binary analysis architecture and components. BAP\xspace  is divided into a front-end, which is responsible for lifting instructions to the BAP\xspace  IL, and a platform-independent back-end for analyses.}}{4}{figure.1.3}}
+\newlabel{fig:vine-components}{{1.3}{4}{\bap Overview\relax }{figure.1.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}BAP\xspace  Overview}{4}{section.1.3}}
+\citation{idapro}
+\citation{nethercote:2004:phd}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}The BAP\xspace  Toolkit}{7}{chapter.2}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Toolkit Overview}{7}{section.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Obtaining BAP\xspace  }{7}{section.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Lifting Binary Code to BIL\xspace  }{7}{section.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}The internals of {\tt  toil}}{7}{section.2.4}}
+\citation{temu}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces High-level view of tools provided with BAP\xspace  .}}{8}{figure.2.1}}
+\newlabel{fig:toolchain-overview}{{2.1}{8}{Toolkit Overview\relax }{figure.2.1}{}}
+\citation{graphviz:dot}
+\citation{muchnick:1997}
+\citation{zgrviewer}
+\citation{balakrishnan:2007}
+\citation{balakrishnan:2007}
+\citation{muchnick:1997}
+\citation{jackson:1994}
+\citation{simpson:1996}
+\citation{muchnick:1997}
+\citation{muchnick:1997}
+\citation{muchnick:1997}
+\citation{balakrishnan:2007}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Transformations on BIL\xspace  Code}{9}{section.2.5}}
+\@writefile{toc}{\contentsline {paragraph}{Graphs.}{9}{section*.6}}
+\@writefile{toc}{\contentsline {paragraph}{Single Static Assignment.}{9}{section*.7}}
+\@writefile{toc}{\contentsline {paragraph}{Chopping.}{9}{section*.8}}
+\citation{balakrishnan:2007}
+\citation{brumley:2008}
+\citation{dijkstra:1976}
+\citation{cvclite}
+\citation{ganesh:2007}
+\citation{dyninst}
+\citation{phoenix}
+\citation{idapro}
+\@writefile{toc}{\contentsline {paragraph}{Data-flow and Optimizations.}{10}{section*.9}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Tools from BIL\xspace  }{10}{section.2.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}{\tt  topredicate}}{10}{subsection.2.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}{\tt  evaluate}}{10}{subsection.2.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3}{\tt  toc}}{10}{subsection.2.6.3}}
+\citation{brumley:2006:alias}
+\citation{brumley:2006:alias}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Discussion}{11}{section.2.7}}
+\newlabel{vine:discussion}{{2.7}{11}{Discussion\relax }{section.2.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.1}Why Design a New Infrastructure?}{11}{subsection.2.7.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.2}Limitations of BAP\xspace  }{11}{subsection.2.7.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.3}Is Lifting Correct?}{11}{subsection.2.7.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7.4}Size of Lifting IL for a Program}{12}{subsection.2.7.4}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Formalization of BIL\xspace  }{13}{chapter.3}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}The BIL\xspace  Language}{13}{section.3.1}}
+\newlabel{vine:language}{{3.1}{13}{The \bil Language\relax }{section.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Values and Types}{13}{subsection.3.1.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces The Binary Intermediate Language. Note commas separte operators.}}{14}{table.3.1}}
+\newlabel{vine:syntax}{{3.1}{14}{The \bil Language\relax }{table.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Expressions}{15}{subsection.3.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Statements and Programs}{15}{subsection.3.1.3}}
+\newlabel{endian:code}{{3.1a}{16}{Subfigure 3 3.1a\relax }{subfigure.3.1.1}{}}
+\newlabel{sub@endian:code}{{(a)}{a}{Subfigure 3 3.1a\relax }{subfigure.3.1.1}{}}
+\newlabel{endian:membefore}{{3.1b}{16}{Subfigure 3 3.1b\relax }{subfigure.3.1.2}{}}
+\newlabel{sub@endian:membefore}{{(b)}{b}{Subfigure 3 3.1b\relax }{subfigure.3.1.2}{}}
+\newlabel{endian:memafter}{{3.1c}{16}{Subfigure 3 3.1c\relax }{subfigure.3.1.3}{}}
+\newlabel{sub@endian:memafter}{{(c)}{c}{Subfigure 3 3.1c\relax }{subfigure.3.1.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces (a) shows an example of little-endian stores as found in x86 that partially overlap. (b) shows memory after executing line 1, and (c) shows memory after executing line 5. Line 7 will load the value 0x22bb.}}{16}{figure.3.1}}
+\newlabel{fig:endian}{{3.1}{16}{Statements and Programs\relax }{figure.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Normalized version of the store and load from Figure\nobreakspace  {}\ref  {endian:code}.}}{16}{figure.3.2}}
+\newlabel{endian:normalized}{{3.2}{16}{Normalized Memory\relax }{figure.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Normalized Memory}{16}{section.3.2}}
+\newlabel{vine:normalized}{{3.2}{16}{Normalized Memory\relax }{section.3.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Operational semantics notation.}}{17}{table.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Operational Semantics}{17}{subsection.3.2.1}}
+\newlabel{vine:operational}{{3.2.1}{17}{Operational Semantics\relax }{subsection.3.2.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Operational Semantics.}}{18}{table.3.3}}
+\newlabel{vine:taboperational}{{3.3}{18}{Operational Semantics\relax }{table.3.3}{}}
+\citation{nethercote:2004:phd}
+\citation{nethercote:2004:phd}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}BAP\xspace  Development Guide}{21}{chapter.4}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Overview}{21}{section.4.1}}
+\citation{phoenix}
+\citation{phoenix:noflags}
+\citation{phoenix:noflags}
+\citation{balakrishnan:2005}
+\citation{balakrishnan:2007}
+\citation{cifuentes:1994}
+\citation{vanemmerik:2007}
+\citation{mycroft:1999}
+\citation{srivastava:1994,larus:1995,luk:2005,nethercote:2004:phd,nanda:2006,dynamorio,dyninst}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Related Work}{23}{chapter.5}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{vine:related}{{5}{23}{Related Work\relax }{chapter.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Other Binary Analysis Platforms.}{23}{section*.10}}
+\@writefile{toc}{\contentsline {paragraph}{Decompilation.}{23}{section*.11}}
+\@writefile{toc}{\contentsline {paragraph}{Binary Instrumentation.}{23}{section*.12}}
+\citation{luk:2005}
+\citation{necula:2002:cil}
+\citation{suif}
+\@writefile{toc}{\contentsline {paragraph}{Other Program Analysis Platforms.}{24}{section*.13}}
+\bibstyle{plain}
+\bibdata{bibtex/biblio,bibtex/misc}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Credits}{25}{chapter.6}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\bibcite{cvclite}{1}
+\bibcite{graphviz:dot}{2}
+\bibcite{suif}{3}
+\bibcite{temu}{4}
+\bibcite{zgrviewer}{5}
+\bibcite{dynamorio}{6}
+\bibcite{arm:armv4}{7}
+\bibcite{balakrishnan:2007}{8}
+\bibcite{balakrishnan:2005}{9}
+\bibcite{brumley:2008}{10}
+\bibcite{brumley:2006:alias}{11}
+\bibcite{cifuentes:1994}{12}
+\bibcite{idapro}{13}
+\bibcite{dijkstra:1976}{14}
+\bibcite{vanemmerik:2007}{15}
+\bibcite{ganesh:2007}{16}
+\bibcite{intel:x86}{17}
+\bibcite{jackson:1994}{18}
+\bibcite{larus:1995}{19}
+\bibcite{luk:2005}{20}
+\bibcite{phoenix}{21}
+\bibcite{phoenix:noflags}{22}
+\bibcite{muchnick:1997}{23}
+\bibcite{mycroft:1999}{24}
+\bibcite{nanda:2006}{25}
+\bibcite{necula:2002:cil}{26}
+\bibcite{nethercote:2004:phd}{27}
+\bibcite{dyninst}{28}
+\bibcite{simpson:1996}{29}
+\bibcite{srivastava:1994}{30}

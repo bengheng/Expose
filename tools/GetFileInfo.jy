@@ -1,0 +1,29 @@
+#!/usr/bin/jython
+
+import os
+import sys
+from com.ziclix.python.sql import zxJDBC
+
+path_sha1 = os.path.splitext(sys.argv[1])[0]
+
+db = zxJDBC.connect("jdbc:mysql://virtual2.eecs.umich.edu/libmatcher", "libmatcher", "l1bm@tcher", "org.gjt.mm.mysql.Driver")
+file_cursor = db.cursor()
+file_cursor.execute("SELECT * FROM file where path_sha1=\""+path_sha1+"\"")
+
+file = file_cursor.fetchone()
+if file is not None:
+	print "FID: "+str(file[0])
+	print "CID: "+str(file[1])
+	print "Path: "+file[2]
+	print "Name: "+file[3]
+	print "Type: "+file[4]
+	print "Access Time: "+str(file[5])
+	print "Change Time: "+str(file[6])
+	print "Modify Time: "+str(file[7])
+	print "Size: "+str(file[8])
+	print "File SHA1: "+file[9]
+	print "Path SHA1: "+file[10]
+file_cursor.close()
+del file_cursor
+
+

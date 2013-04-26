@@ -1,0 +1,181 @@
+\begin{thebibliography}{10}
+
+\bibitem{cvclite}
+{CVC} {Lite} documentation.
+\newblock \url{http://www.cs.nyu.edu/acsys/cvcl/doc/}.
+\newblock URL checked 7/26/2008.
+
+\bibitem{graphviz:dot}
+The {DOT} language.
+\newblock \url{http://www.graphviz.org/doc/info/lang.html}.
+\newblock URL checked 7/26/2008.
+
+\bibitem{suif}
+The {SUIF} 2 compiler system.
+\newblock \url{http://suif.stanford.edu/suif/suif2/index.html}.
+\newblock URL checked 7/27/2008.
+
+\bibitem{temu}
+{TEMU}.
+\newblock \url{http://bitblaze.cs.berkeley.edu/temu.html}.
+\newblock URL checked 7/27/2008.
+
+\bibitem{zgrviewer}
+Zgrviewer.
+\newblock \url{http://zvtm.sourceforge.net/zgrviewer.html}.
+\newblock URL Checked 3/6/09.
+
+\bibitem{dynamorio}
+On the run - building dynamic modifiers for optimization, detection, and
+  security.
+\newblock Original {DynamoRIO} announcement via {PLDI} tutorial, June 2002.
+
+\bibitem{arm:armv4}
+{ARM}.
+\newblock {\em {ARM} Architecture Reference Manual}, 2005.
+\newblock Doc No. DDI-0100I.
+
+\bibitem{balakrishnan:2007}
+Gogul Balakrishnan.
+\newblock {\em {WYSINWYX:} {W}hat {Y}ou {S}ee {I}s {N}ot {W}hat {Y}ou
+  e{X}ecute}.
+\newblock PhD thesis, Computer Science Department, University of Wisconsin at
+  Madison, August 2007.
+
+\bibitem{balakrishnan:2005}
+Gogul Balakrishnan, Radu Gruian, Thomas Reps, and Tim Teitelbaum.
+\newblock Codesurfer/x86 - a platform for analyzing x86 executables.
+\newblock In {\em Proceedings of the International Conference on Compiler
+  Construction}, April 2005.
+
+\bibitem{brumley:2008}
+David Brumley, Cody Hartwig, Zhenkai Liang, James Newsome, Pongsin Poosankam,
+  Dawn Song, and Heng Yin.
+\newblock Automatically identifying trigger-based behavior in malware.
+\newblock In Wenkee Lee, Cliff Wang, and David Dagon, editors, {\em Botnet
+  Detection}, volume~36 of {\em Countering the Largest Security Threat Series:
+  Advances in Information Security}. Springer-Verlag, 2008.
+
+\bibitem{brumley:2006:alias}
+David Brumley and James Newsome.
+\newblock Alias analysis for assembly.
+\newblock Technical Report CMU-CS-06-180, Carnegie Mellon University School of
+  Computer Science, 2006.
+
+\bibitem{cifuentes:1994}
+Cristina Cifuentes.
+\newblock {\em Reverse Compilation Techniques}.
+\newblock PhD thesis, Queensland University of Technology, July 1994.
+
+\bibitem{idapro}
+DataRescue.
+\newblock {IDA} {Pro}.
+\newblock \url{http://www.datarescue.com}.
+\newblock URL checked 7/31/2008.
+
+\bibitem{dijkstra:1976}
+E.W. Dijkstra.
+\newblock {\em A Discipline of Programming}.
+\newblock Prentice Hall, Englewood Cliffs, NJ, 1976.
+
+\bibitem{vanemmerik:2007}
+Michael James~Van Emmerik.
+\newblock {\em Single Static Assignment for Decompilation}.
+\newblock PhD thesis, The University of Queensland School of Information
+  Technology and Electrical Engineering, May 2007.
+
+\bibitem{ganesh:2007}
+Vijay Ganesh and David~L. Dill.
+\newblock A decision procedure for bit-vectors and arrays.
+\newblock In W.~Damm and H.~Hermanns, editors, {\em Proceedings on the
+  Conference on Computer Aided Verification}, volume 4590 of {\em Lecture Notes
+  in Computer Science}, pages 524--536, Berlin, Germany, July 2007.
+  Springer-Verlag.
+
+\bibitem{intel:x86}
+Intel Corporation.
+\newblock {\em Intel 64 and {IA-32} Architectures Software Developer's Manual,
+  Volumes 1-5}, April 2008.
+
+\bibitem{jackson:1994}
+Daniel Jackson and Eugene~J. Rollins.
+\newblock Chopping: {A} generalization of slicing.
+\newblock Technical Report CS-94-169, Carnegie Mellon University School of
+  Computer Science, 1994.
+
+\bibitem{larus:1995}
+James Larus and Eric Schnarr.
+\newblock {EEL}: machine-independent executable editing.
+\newblock In {\em Proceedings of the {ACM} Conference on Programming Language
+  Design and Implementation}, pages 291--300, 1995.
+
+\bibitem{luk:2005}
+Chi-Keung Luk, Robert Cohn, Robert Muth, Harish Patil, Artur Klauser, Geoff
+  Lowney, Steven Wallace, Vijay~Janapa Reddi, and Kim Hazelwood.
+\newblock Pin: Building customized program analysis tools with dynamic
+  instrumentation.
+\newblock In {\em Proceedings of the {ACM} Conference on Programming Language
+  Design and Implementation}, June 2005.
+
+\bibitem{phoenix}
+Microsoft.
+\newblock Phoenix framework.
+\newblock \url{http://research.microsoft.com/phoenix/}.
+\newblock URL checked 7/31/2008.
+
+\bibitem{phoenix:noflags}
+Microsoft.
+\newblock Phoenix project architect posting.
+\newblock
+  \url{http://forums.msdn.microsoft.com/en-US/phoenix/thread/90f5212c-f05a-4ae%
+a-9a8f-a5840a6d101d}, July 2008.
+\newblock URL checked 7/31/2008.
+
+\bibitem{muchnick:1997}
+Steven~S. Muchnick.
+\newblock {\em Advanced Compiler Design and Implementation}.
+\newblock Academic Press, 1997.
+
+\bibitem{mycroft:1999}
+Alan Mycroft.
+\newblock Type-based decompilation.
+\newblock In {\em European Symposium on Programming}, March 1999.
+
+\bibitem{nanda:2006}
+Susanta Nanda, Wei Li, Lap chung Lam, and Tzi cker Chiueh.
+\newblock {BIRD}: Binary interpretation using runtime disassembly.
+\newblock In {\em Proceedings of the {IEEE/ACM} Conference on Code Generation
+  and Optimization}, March 2006.
+
+\bibitem{necula:2002:cil}
+George~C. Necula, Scott McPeak, S.P. Rahul, and Westley Weimer.
+\newblock {CIL}: Intermediate language and tools for analysis and
+  transformation of {C} programs.
+\newblock In {\em Proceedings of the International Conference on Compiler
+  Construction}, 2002.
+
+\bibitem{nethercote:2004:phd}
+Nicholas Nethercote.
+\newblock {\em Dynamic Binary Analysis and Instrumentation or Building Tools is
+  Easy}.
+\newblock PhD thesis, Trinity College, University of Cambridge, 2004.
+
+\bibitem{dyninst}
+Paradyn/Dyninst.
+\newblock Dyninst: An application program interface for runtime code
+  generation.
+\newblock \url{http://www.dyninst.org}.
+\newblock URL checked 9/28/2008.
+
+\bibitem{simpson:1996}
+Loren~Taylor Simpson.
+\newblock {\em Value-Driven Redundancy Elimination}.
+\newblock PhD thesis, Rice University Department of Computer Science, 1996.
+
+\bibitem{srivastava:1994}
+Amitabh Srivastava and Alan Eustace.
+\newblock {ATOM}: A system for building customized program analysis tools.
+\newblock In {\em Proceedings of the {ACM} Conference on Programming Language
+  Design and Implementation}, pages 196--205, 1994.
+
+\end{thebibliography}

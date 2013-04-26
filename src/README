@@ -1,0 +1,5 @@
+REQUIREMENTS
+============
+
+For compiling IDA Plugins, you need the IDA SDK. Make sure the values in the
+Makefiles are updated.

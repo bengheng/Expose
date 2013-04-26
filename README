@@ -1,0 +1,88 @@
+ABSTRACT
+========
+
+The use of third-party libraries in deployed applications can potentially put
+an organization's intellectual property at risk due to licensing restrictions
+requiring disclosure or distribution of the resulting software. Binary
+applications that are statically linked to buggy version(s) of a library can
+also provide malware with entry points into an organization. While many
+organizations have policies to restrict the use of third-party software in
+applications, determining whether an application uses a restricted library can
+be difficult when it is distributed as binary code. Compiler optimizations,
+function inlining, and lack of symbols in binary code make the task challenging
+for automated techniques.  On the other hand, semantic analysis techniques are
+relatively slow. Given a library and a set of binary applications, Expose
+combines symbolic execution using a theorem prover, and function-level
+syntactic matching techniques to achieve both performance and high quality
+rankings of applications. Higher rankings indicate a higher likelihood of
+re-using the library's code.
+
+Note: Earlier versions of this project are called LibMatcher and GraphMatcher,
+so you may see these names in some places.
+
+
+DESCRIPTION
+===========
+
+The overall steps to get things running are as follows.
+1. Compile "GraphMatcher.exe" in "./src/GraphMatcher/".
+2. Make sure the IDA scripts are in place. Specifically, check "genidb.idc" and
+   "funcstats.idc". The "funcstats.idc" requires the "JmpPatch" and "funcstats" IDA
+   plugin. So, compile them in "./src/plugin/jmppatch/" and
+   "./src/plugin/funcstats/". Look into "./tools/GoLibMatcher.py" for more
+   information.
+3. Use "GoLibMatcher.py" to start the process, which includes generating IDB
+   files, extracting function information, and using "GraphMatcher.exe" to
+   compute the scores.
+
+
+File Descriptions
+-----------------
+
+Here's the description of some of the files you will be likely to encounter.
+
+=> $(LMHOME)/tools/GoLibMatcher.py
+Python file that generates IDB and DOT files.
+
+=> $(LMHOME)/tools/GraphMatcher.exe
+Computes approximate graph matching score.
+
+=> $(LMHOME)/bin/ida/idc/*.idc
+IDA script files for both exact and approximate	matching.
+
+=> $(LMHOME)/idb/exact/<nodename>/*.idb
+IDA database files for exact matching.
+
+=> $(LMHOME)/idb/approx/<nodename>/*.idb
+IDA database files for approx matching.
+
+=> $(LMHOME)/dot/<nodename>/*.dot
+DOT files of files on <nodename> for approx matching.	The filename of a DOT
+file is the SHA1 checksum of the absolute filepath.
+
+=> $(LMHOME)/dot/sbj/*.dot
+DOT files of all subjects for approx matching.
+
+=> $(LMHOME)/mnt/<nodename>
+Mount path of client with <nodename>.
+
+
+LICENSING
+=========
+
+This program is released under the terms of the GNU General Public
+License (GNU GPL).
+
+You can find a copy of the license in the file COPYING.
+
+
+CONTACT
+=======
+
+For any questions or feedbacks, please contact:
+Beng Heng Ng (bengheng@gmail.com)
+Atul Prakash (aprakash@eecs.umich.edu)
+
+We value all feedback and will try to answer your queries. However, we seek your
+understanding that sometimes, due to resource constraints, our replies may take
+longer than we would prefer.

@@ -1,0 +1,116 @@
+# This is a -*- makefile -*-, Emacs
+#
+#/********************************************************************
+# * AUTHORS: Vijay Ganesh
+# *
+# * BEGIN DATE: November, 2005
+# *
+# * LICENSE: Please view LICENSE file in the home dir of this Program
+# ********************************************************************/
+
+-include $(TOP)/scripts/config.info
+
+#OPTIMIZE     = -g -pg            # Debugging and gprof-style profiling
+#OPTIMIZE      = -g                # Debugging
+#OPTIMIZE      = -O3 -fPIC         # Maximum optimization
+#OPTIMIZE      = -O3 -march=native -fomit-frame-pointer # Maximum optimization
+#OPTIMIZE      = -O3 -march=native -DNDEBUG -DLESSBYTES_PERNODE
+OPTIMIZE      = -O3  -g            # Maximum optimization
+
+
+#When solving array problems STP creates lots of objects during the conversion to CNF. If STP is compiled 
+#as a 32-bit executable, then these objects are about half the size than they are if STP is compiled as a 64-bit
+#program. That's because lots of the data in the objects are pointers to other objects.  So, if you meet the 
+#following criteria you may want to enable -m32 on your 64-bit machine:
+#1) You are solving array problems. Problems without arrays use another CNF conversion scheme.
+#2) You need STP to use about half the memory.
+#CFLAGS_M32   = -m32
+
+CFLAGS_BASE   = $(OPTIMIZE)
+
+
+ifeq ($(WITHCBITP),yes)
+	CFLAGS_BASE += -DWITHCBITP
+endif
+
+# todo: These should be set by the config script of course..
+TEST_PREFIX=../../stp-tests/
+SHELL=/bin/bash
+
+
+# You can compile using make STATIC=true to compile a statically
+# linked executable Note that you should execute liblinks.sh first.
+#STATIC=true
+
+ifdef STATIC
+    LDFLAGS_BASE = -static-libgcc -static
+endif
+
+
+LDFLAGS = $(LDFLAGS_BASE)
+CFLAGS = $(CFLAGS_BASE) $(CFLAGS_M32)
+
+
+#Required by minisat2.2
+CFLAGS += -D __STDC_LIMIT_MACROS -D __STDC_FORMAT_MACROS
+
+#CXXFLAGS = $(CFLAGS) -Wall -Wextra -DEXT_HASH_MAP -Wno-deprecated
+#CXXFLAGS = $(CFLAGS) -Wextra -DEXT_HASH_MAP -Wno-deprecated
+CXXFLAGS = $(CFLAGS) -DEXT_HASH_MAP -Wno-deprecated
+#CXXFLAGS = $(CFLAGS) -Wall -DTR1_UNORDERED_MAP -Wno-deprecated
+#CXXFLAGS = $(CFLAGS) -Wall 
+#LDFLAGS= -lstdc++
+#LDFLAGS= -lstdc++ -pg
+#LDFLAGS= -lstlport_gcc_stldebug
+#LDFLAGS= -L/home/vganesh/STLport/lib -lstlport
+# quantify $(CXX) $(CFLAGS) $(LDFLAGS) lexPL.o parsePL.o main.o $(LIBS) -o parser	
+
+LEX = flex
+YACC = bison -d -y --debug -v
+
+
+# Run gcc to generate dependency rules for object files; use as follows:
+#	<dependency file> : <input files>
+#		$(call makedepend,<dependency file>,<input files>)
+#	-include <dependency file>
+#
+# Object files will be rebuilt if any of the following is updated:
+#    - the source file
+#    - a dependency (e.g., included header files)
+#    - the Makefile running this command
+#    - any file included by the Makefile, including this Makefile.common file,
+#      but excluding <dependency file>
+#
+# Note: do not use $^ as <input files>, since additional dependencies will be
+# added to the dependency list of <dependency file>.
+#
+ifeq (,$(filter clean configclean distclean,$(MAKECMDGOALS)))
+define makedepend
+	echo "Making dependencies"
+	$(RM) $(1)
+	$(foreach foo,$(2),
+		$(CXX) $(CXXFLAGS) \
+			-MM -MG -MP \
+			-MQ $(basename $(foo)).o -MQ $(1) \
+			$(foo) \
+			>> $(1)
+	)
+	echo "$(addsuffix .o,$(basename $(2))) $(1) : $(filter-out $(1),$(MAKEFILE_LIST))" >> $(1)
+endef
+endif
+
+
+# Concatenate ar archives:
+#	$(call arcat,destination.a,source1.a source2.a ...)
+define arcat
+	$(call arcat.sh,$(abspath $(1)),$(shell mktemp -d $(CURDIR)/arcat-XXXXXXXXXX),$(abspath $(2)))
+endef
+
+define arcat.sh
+	set -e; \
+	trap "$(RM) -r $(2)" EXIT; \
+	cd $(2); \
+	$(3:%=$(AR) x %;) \
+	$(RM) __.SYMDEF*; \
+	$(AR) qcs $(1) *
+endef

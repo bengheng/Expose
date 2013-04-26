@@ -1,0 +1,3 @@
+This application implements the Hungarian Algorithm (or Munkres Algorithm)
+based on the description in "munkres.pdf". We use the GNU Scientific Library
+for the implementation of the vectors and matrices and their common functions.

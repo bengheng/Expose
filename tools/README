@@ -1,0 +1,5 @@
+The "tools" directory contains utility scripts to generate and analyze data. Not
+all of them may be compatible with the database schema, since things have
+changed along the way.
+
+To get started, take a look at "GoLibMatcher.py".
